@@ -90,6 +90,7 @@ export default () => {
 ```bash
 npx expo install @stream-io/video-react-native-sdk @stream-io/react-native-webrtc
 npx expo install react-native-incall-manager@4.1.0 @react-native-community/netinfo@11.1.0 @notifee/react-native@7.7.1
+npx expo install @config-plugins/react-native-webrtc 
 npx pod-install
 ```
 
@@ -131,3 +132,4 @@ android.enableDexingArtifactTransform.desugaring=false
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
 <https://www.youtube.com/watch?v=b9sQ28QUGW8>
 <https://getstream.io/video/sdk/reactnative/tutorial/video-calling>
+<https://getstream.io/video/docs/reactnative/setup/installation/expo>
