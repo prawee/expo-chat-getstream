@@ -86,12 +86,15 @@ export default () => {
 }
 ```
 
-## Package and dependencies for Calling
+## Fix package and dependencies for Calling
 ```bash
 npx expo install @stream-io/video-react-native-sdk @stream-io/react-native-webrtc
+npx expo install react-native-incall-manager@4.1.0 @react-native-community/netinfo@9.3.9 @notifee/react-native@7.7.1
+npx pod-install
 ```
 
 ## Reference
 
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
 <https://www.youtube.com/watch?v=b9sQ28QUGW8>
+<https://getstream.io/video/sdk/reactnative/tutorial/video-calling>
