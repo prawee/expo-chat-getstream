@@ -4,9 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Text } from 'react-native'
 
-const Stack = createStackNavigator()
+import HomeScreen from './src/screens/Home'
 
-const HomeScreen = () => <Text>Home Screen</Text>
+const Stack = createStackNavigator()
 
 const NavigationStack = () => {
   return (
