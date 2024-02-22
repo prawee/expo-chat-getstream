@@ -27,6 +27,20 @@ module.exports = {
 }
 ```
 
+## Register component
+```bash
+nano index.js
+```
+```bash
+import 'react-native-gesture-handler'
+import { AppRegistry } from 'react-native'
+
+import App from './App'
+import { name as appName } from './app.json'
+
+AppRegistry.registerComponent(appName, () => App)
+```
+
 ## Reference
 
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
