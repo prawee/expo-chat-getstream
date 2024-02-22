@@ -14,6 +14,8 @@ expo install @stream-io/flat-list-mvcp @react-native-community/netinfo expo-file
 expo install expo-document-picker
 
 expo install expo-av
+
+expo install expo-haptics expo-sharing expo-clipboard
 ```
 
 ## Reference
