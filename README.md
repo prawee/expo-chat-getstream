@@ -127,6 +127,26 @@ android {
 android.enableDexingArtifactTransform.desugaring=false
 ```
 
+## Config plugin
+- app.json
+```bash
+{
+  "expo": {
+    ...
+    "plugins": [
+      "@stream-io/video-react-native-sdk",
+      [
+        "@config-plugins/react-native-webrtc",
+        {
+          "cameraPermission": "Allow ${PRODUCT_NAME} to access your camera",
+          "microphonePermission": "Allow ${PRODUCT_NAME} to access your microphone"
+        }
+      ]
+    ]
+  }
+}
+```
+
 ## Reference
 
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
