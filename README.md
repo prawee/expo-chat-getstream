@@ -7,5 +7,5 @@ expo init expo-getsteam
 
 ## Package and dependencies
 ```bash
-expo install steam-chat-expo
+expo install stream-chat-expo
 ```
