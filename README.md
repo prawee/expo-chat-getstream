@@ -57,3 +57,4 @@ npx pod-install
 ## Reference
 
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
+<https://www.youtube.com/watch?v=b9sQ28QUGW8>
