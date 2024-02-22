@@ -11,11 +11,20 @@ expo install stream-chat-expo
 
 expo install @stream-io/flat-list-mvcp @react-native-community/netinfo expo-file-system expo-image-manipulator expo-image-picker expo-media-library react-native-gesture-handler react-native-reanimated react-native-svg
 
-expo install expo-document-picker
+expo install expo-document-picker expo-av expo-haptics expo-sharing expo-clipboard
+```
 
-expo install expo-av
-
-expo install expo-haptics expo-sharing expo-clipboard
+## Configure
+```bash
+nano babel.config.js
+```
+```bash
+module.exports = {
+    ...
+    plugins: [
+        'react-native-reanimated/plugin',
+    ]
+}
 ```
 
 ## Reference
