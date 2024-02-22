@@ -9,10 +9,19 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "11.1.0",
+    "@stream-io/flat-list-mvcp": "^0.10.3",
     "expo": "~50.0.7",
+    "expo-file-system": "~16.0.6",
+    "expo-image-manipulator": "~11.8.0",
+    "expo-image-picker": "~14.7.1",
+    "expo-media-library": "~15.9.1",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-native": "0.73.4",
+    "react-native-gesture-handler": "~2.14.0",
+    "react-native-reanimated": "~3.6.2",
+    "react-native-svg": "14.1.0",
     "stream-chat-expo": "^5.24.0"
   },
   "devDependencies": {
