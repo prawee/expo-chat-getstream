@@ -86,6 +86,11 @@ export default () => {
 }
 ```
 
+## Package and dependencies for Calling
+```bash
+npx expo install @stream-io/video-react-native-sdk @stream-io/react-native-webrtc
+```
+
 ## Reference
 
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
