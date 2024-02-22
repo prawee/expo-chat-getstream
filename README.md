@@ -93,6 +93,39 @@ npx expo install react-native-incall-manager@4.1.0 @react-native-community/netin
 npx pod-install
 ```
 
+## Permissions
+### Android
+- android/app/src/main/AndroidManifest.xml
+```xml
+<manifest ...>
+  <user-feature android:name="android.hardware.camera" />
+  <user-feature android:name="android.hardware.camera.autofocus" />
+  <user-feature android:name="android.hardware.audio.output" />
+  <user-feature android:name="android.hardware.microphone" />
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+  ...
+</manifest>
+```
+- android/app/build.gradle
+```bash
+...
+android {
+  ...
+  compileOptions {
+      sourceCompatibility JavaVersion.VERSION_1_8
+      targetCompatibility JavaVersion.VERSION_11
+  }
+}
+...
+```
+- android/gradle.properties
+```bash
+...
+android.enableDexingArtifactTransform.desugaring=false
+```
+
 ## Reference
 
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
