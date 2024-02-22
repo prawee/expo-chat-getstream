@@ -89,7 +89,7 @@ export default () => {
 ## Fix package and dependencies for Calling
 ```bash
 npx expo install @stream-io/video-react-native-sdk @stream-io/react-native-webrtc
-npx expo install react-native-incall-manager@4.1.0 @react-native-community/netinfo@9.3.9 @notifee/react-native@7.7.1
+npx expo install react-native-incall-manager@4.1.0 @react-native-community/netinfo@11.1.0 @notifee/react-native@7.7.1
 npx pod-install
 ```
 
