@@ -46,7 +46,7 @@ AppRegistry.registerComponent(appName, () => App)
 npx expo install @react-navigation/native@^6.0.10 @react-navigation/stack@^6.2.1  react-native-screens@^3.13.1 react-native-safe-area-context@^4.2.5
 ```
 ```bash
-npx expo prebuild
+npx expo prebuild || expo run:ios || expo run:android
 # com.teohong.phone
 # ...
 # ✔ Finished prebuild
