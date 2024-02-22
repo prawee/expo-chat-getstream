@@ -54,6 +54,38 @@ npx expo prebuild || expo run:ios || expo run:android
 npx pod-install
 ```
 
+## Make Screen
+- Update App.js
+```bash
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { Text } from 'react-native'
+
+const Stack = createStackNavigator()
+
+const HomeScreen = () => <Text>Home Screen</Text>
+
+const NavigationStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='Home' component={HomeScreen} />
+    </Stack.Navigator>
+  )
+}
+
+export default () => {
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <NavigationStack />
+      </NavigationContainer>
+    </SafeAreaView>
+  )
+}
+```
+
 ## Reference
 
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
