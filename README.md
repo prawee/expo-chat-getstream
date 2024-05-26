@@ -2,7 +2,8 @@
 
 ## Initial project
 ```bash
-expo init expo-getsteam
+expo init expo-chat-getstream
+cd expo-chat-getstream
 ```
 
 ## Package and dependencies
@@ -46,7 +47,7 @@ AppRegistry.registerComponent(appName, () => App)
 npx expo install @react-navigation/native@^6.0.10 @react-navigation/stack@^6.2.1  react-native-screens@^3.13.1 react-native-safe-area-context@^4.2.5
 ```
 ```bash
-npx expo prebuild
+npx expo prebuild || expo run:ios || expo run:android
 # com.teohong.phone
 # ...
 # ✔ Finished prebuild
@@ -54,6 +55,102 @@ npx expo prebuild
 npx pod-install
 ```
 
+## Make Screen
+- Update App.js
+```bash
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { Text } from 'react-native'
+
+const Stack = createStackNavigator()
+
+const HomeScreen = () => <Text>Home Screen</Text>
+
+const NavigationStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='Home' component={HomeScreen} />
+    </Stack.Navigator>
+  )
+}
+
+export default () => {
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <NavigationStack />
+      </NavigationContainer>
+    </SafeAreaView>
+  )
+}
+```
+
+## Fix package and dependencies for Calling
+```bash
+npx expo install @stream-io/video-react-native-sdk @stream-io/react-native-webrtc
+npx expo install react-native-incall-manager@4.1.0 @react-native-community/netinfo@11.1.0 @notifee/react-native@7.7.1
+npx expo install @config-plugins/react-native-webrtc 
+npx pod-install
+```
+
+## Permissions
+### Android
+- android/app/src/main/AndroidManifest.xml
+```xml
+<manifest ...>
+  <user-feature android:name="android.hardware.camera" />
+  <user-feature android:name="android.hardware.camera.autofocus" />
+  <user-feature android:name="android.hardware.audio.output" />
+  <user-feature android:name="android.hardware.microphone" />
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+  ...
+</manifest>
+```
+- android/app/build.gradle
+```bash
+...
+android {
+  ...
+  compileOptions {
+      sourceCompatibility JavaVersion.VERSION_1_8
+      targetCompatibility JavaVersion.VERSION_11
+  }
+}
+...
+```
+- android/gradle.properties
+```bash
+...
+android.enableDexingArtifactTransform.desugaring=false
+```
+
+## Config plugin
+- app.json
+```bash
+{
+  "expo": {
+    ...
+    "plugins": [
+      "@stream-io/video-react-native-sdk",
+      [
+        "@config-plugins/react-native-webrtc",
+        {
+          "cameraPermission": "Allow ${PRODUCT_NAME} to access your camera",
+          "microphonePermission": "Allow ${PRODUCT_NAME} to access your microphone"
+        }
+      ]
+    ]
+  }
+}
+```
+
 ## Reference
 
 <https://getstream.io/chat/react-native-chat/tutorial/?language=Expo>
+<https://www.youtube.com/watch?v=b9sQ28QUGW8>
+<https://getstream.io/video/sdk/reactnative/tutorial/video-calling>
+<https://getstream.io/video/docs/reactnative/setup/installation/expo>
