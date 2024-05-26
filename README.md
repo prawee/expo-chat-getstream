@@ -2,7 +2,8 @@
 
 ## Initial project
 ```bash
-expo init expo-getsteam
+expo init expo-chat-getstream
+cd expo-chat-getstream
 ```
 
 ## Package and dependencies
